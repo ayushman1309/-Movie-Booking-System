@@ -1,37 +1,49 @@
 import React from 'react'
-import { assets } from '../assets/assets'
 import { ArrowRight, CalendarIcon, ClockIcon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const HeroSection = () => {
-
   const navigate = useNavigate()
+
   return (
     <div
-      className="flex flex-col items-start justify-center gap-4 px-6 md:px-16 lg:px-36 
-      bg-[url('/backgroundImage.png')] bg-cover bg-center h-screen"
+      className="flex flex-col items-start justify-center gap-6 px-6 md:px-16 lg:px-36 
+      bg-[url('/backgroundImage.png')] bg-cover bg-center h-screen text-white"
     >
-      <img src = {assets.marvelLogo} alt = "" className='max-h-11 lg:h-11 mt-20'/>
-
-      <h1 className='text-5x1 md:text-[70px] md:leading-18 font-semibold max-w-110'>
-        Guardians <br/> of the Galaxy
+      {/* Heading */}
+      <h1 className="text-5xl md:text-[70px] md:leading-[1.2] font-semibold max-w-2xl">
+        Demon <br /> Slayer
       </h1>
 
-      <div className='flext items-center gap-4 text-gray-300'>
-        <span>Action | Adventure | Sci-Fi</span>
-        <div className='flex items-centre gap-1'>
-          <CalendarIcon className='w-4.5 h-4.5'/> 2018
+      {/* Tags */}
+      <div className="flex items-center gap-6 text-xl text-black">
+        <span>Action | Thriller | Anime</span>
+        <div className="flex items-center gap-1 text-black">
+          <CalendarIcon className="w-4 h-4" /> 2025
         </div>
-        <div className='flex items-centre gap-1'>
-          <ClockIcon className='w-4.5 h-4.5'/> 2h 8m
+        <div className="flex items-center gap-1">
+          <ClockIcon className="w-4 h-4" /> 2h 35m
         </div>
-        <p className='max-w-md text-gray-300'>Guardians of the Galaxy is a Marvel Studios film that follows a group of SuperHeros who team up to protect the galaxy. Blending action, humor, and heart, the movie delivers an adventurous space journey filled with stunning visuals, unforgettable characters.
-        </p>
-        <button onClick={() => navigate('/movies')} className='flex items-centre gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transaction rounded-full font-medium cursor-pointer'>
-          Explore Movies
-          <ArrowRight className='w-5 h-5'/>
-        </button>
       </div>
+
+      {/* Description */}
+      <p className="max-w-lg text-gray-200 text-xl ">
+        Demon Slayer: Infinity Castle is a Japanese anime film from Ufotable that brings together
+        the Demon Slayer Corps for their most dangerous mission yet. Blending breathtaking action,
+        stunning animation, the movie takes viewers on an intense journey through the mysterious
+        Infinity Castle as Tanjiro and his allies face the strongest demons in a fight to protect
+        humanity.
+      </p>
+
+      {/* Button */}
+      <button
+        onClick={() => navigate('/movies')}
+        className="flex items-center gap-2 px-6 py-3 text-sm bg-primary hover:bg-primary-dull 
+        transition rounded-full font-medium cursor-pointer"
+      >
+        Explore Movies
+        <ArrowRight className="w-5 h-5" />
+      </button>
     </div>
   )
 }

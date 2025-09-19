@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { assets } from '../assets/assets'
 import { MenuIcon, SearchIcon, TicketPlus, XIcon } from 'lucide-react'
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
+
+// Import logo directly
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const {user} = useUser()
-
+  const { user } = useUser()
   const { openSignIn } = useClerk()
-
   const navigate = useNavigate()
-
-
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full flex items-center 
@@ -21,7 +19,11 @@ const Navbar = () => {
 
       {/* Logo */}
       <Link to="/" className="max-md:flex-1">
-        <img src={assets.logo} alt="QuickShow Logo" className="w-36 h-auto" />
+        <img 
+          src={logo} 
+          alt="CineMate" 
+          className="w-23 h-10 m-2 object-cover rounded-xl shadow-md" 
+        />
       </Link>
 
       {/* Nav Links */}
@@ -38,32 +40,33 @@ const Navbar = () => {
           className="md:hidden absolute top-6 right-6 w-6 h-6 cursor-pointer"
         />
 
-        <Link to="/" onClick={() => {scroll(0,0) , setIsOpen(false)}}>Home</Link>
-        <Link to="/movies" onClick={() => {scroll(0,0) , setIsOpen(false)}}>Movies</Link>
-        <Link to="/" onClick={() => {scroll(0,0) , setIsOpen(false)}}>Theaters</Link>
-        <Link to="/" onClick={() => {scroll(0,0) , setIsOpen(false)}}>Releases</Link>
-        <Link to="/favorite" onClick={() => {scroll(0,0) , setIsOpen(false)}}>Favorites</Link>
+        <Link to="/" onClick={() => {scroll(0,0) ; setIsOpen(false)}}>Home</Link>
+        <Link to="/movies" onClick={() => {scroll(0,0) ; setIsOpen(false)}}>Movies</Link>
+        <Link to="/" onClick={() => {scroll(0,0) ; setIsOpen(false)}}>Theaters</Link>
+        <Link to="/" onClick={() => {scroll(0,0) ; setIsOpen(false)}}>Releases</Link>
+        <Link to="/favorite" onClick={() => {scroll(0,0) ; setIsOpen(false)}}>Favorites</Link>
       </div>
-
 
       <div className="flex items-center gap-8">
         <SearchIcon className="max-md:hidden w-8 h-6 cursor-pointer" />
         { 
           !user ? (
-            <button onClick = {() => openSignIn({})} className="px-4 py-1 sm:py-2 bg-primary hover:bg-primary-dull 
+            <button onClick={() => openSignIn({})} className="px-4 py-1 sm:py-2 bg-primary hover:bg-primary-dull 
             transition rounded-full font-medium cursor-pointer">
-            Login
+              Login
             </button>
           ) : (
-              <UserButton>
-                <UserButton.MenuItems>
-                  <UserButton.Action label = "My Bookings" labelIcon = {<TicketPlus width={15}/>} onClick={() => navigate('/my-bookings')}
-                  />
-                </UserButton.MenuItems>
-              </UserButton>
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action 
+                  label="My Bookings" 
+                  labelIcon={<TicketPlus width={15}/>} 
+                  onClick={() => navigate('/my-bookings')}
+                />
+              </UserButton.MenuItems>
+            </UserButton>
           )
         }
-        
       </div>
 
       {/* Hamburger Menu Icon */}

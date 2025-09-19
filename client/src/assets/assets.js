@@ -1,17 +1,13 @@
-import logo from './logo.svg'
-import marvelLogo from './marvelLogo.svg'
 import googlePlay from './googlePlay.svg'
 import appStore from './appStore.svg'
 import screenImage from './screenImage.svg'
 import profile from './profile.png'
 
 export const assets = {
-    logo,
-    marvelLogo,
-    googlePlay,
-    appStore,
-    screenImage,
-    profile
+  googlePlay,
+  appStore,
+  screenImage,
+  profile
 }
 
 export const dummyTrailers = [
@@ -180,7 +176,7 @@ export const dummyShowsData = [
         "title": "Thunderbolts*",
         "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
         "poster_path": "https://image.tmdb.org/t/p/original/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg",
-        "backdrop_path": "https://image.tmdb.org/t/p/original/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original/rthMuZfF4fqEU4JVbgSW9wQ8rs.jpg",
         "genres": [
             { "id": 28, "name": "Action" },
             { "id": 878, "name": "Science Fiction" },
@@ -289,7 +285,6 @@ export const dummyDashboardData = {
     ]
 }
 
-
 export const dummyBookingData = [
     {
         "_id": "68396334fb83252d82e17295",
@@ -323,8 +318,8 @@ export const dummyBookingData = [
         "show": {
             _id: "68352363e96d99513e4221a4",
             movie: dummyShowsData[0],
-            showDateTime: "2025-06-30T02:30:00.000Z",
-            showPrice: 59,
+            // showDateTime": "2025-06-30" T0 "2:30:00.000",
+            // showPrice": 59,
         },
         "amount": 147,
         "bookedSeats": ["A1", "A2","A3"],
