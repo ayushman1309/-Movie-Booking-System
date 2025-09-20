@@ -22,7 +22,7 @@ const Navbar = () => {
         <img 
           src={logo} 
           alt="CineMate" 
-          className="w-23 h-10 m-2 object-cover rounded-xl shadow-md" 
+          className="w-23 h-10 m-2  rounded-2xl cursor-pointer" 
         />
       </Link>
 

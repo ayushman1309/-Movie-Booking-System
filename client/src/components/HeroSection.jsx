@@ -8,42 +8,46 @@ const HeroSection = () => {
   return (
     <div
       className="flex flex-col items-start justify-center gap-6 px-6 md:px-16 lg:px-36 
-      bg-[url('/backgroundImage.png')] bg-cover bg-center h-screen text-white"
+      bg-[url('/backgroundImage.png')] bg-cover bg-center h-screen text-white relative"
     >
-      {/* Heading */}
-      <h1 className="text-5xl md:text-[70px] md:leading-[1.2] font-semibold max-w-2xl">
-        Demon <br /> Slayer
-      </h1>
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Tags */}
-      <div className="flex items-center gap-6 text-xl text-black">
-        <span>Action | Thriller | Anime</span>
-        <div className="flex items-center gap-1 text-black">
-          <CalendarIcon className="w-4 h-4" /> 2025
+      {/* Content */}
+      <div className="relative z-10 flex flex-col gap-6 max-w-3xl">
+        {/* Heading */}
+        <h1 className="text-4xl md:text-[70px] md:leading-[1.2] font-semibold max-w-2xl">
+          Brad Pitt – F1
+        </h1>
+
+        {/* Tags */}
+        <div className="flex flex-wrap items-center gap-6 text-lg text-gray-200">
+          <span>Action | Drama | Sport</span>
+          <div className="flex items-center gap-2">
+            <CalendarIcon className="w-5 h-5" /> 2025
+          </div>
+          <div className="flex items-center gap-2">
+            <ClockIcon className="w-5 h-5" /> 2h 35m
+          </div>
         </div>
-        <div className="flex items-center gap-1">
-          <ClockIcon className="w-4 h-4" /> 2h 35m
-        </div>
+
+        {/* Description */}
+        <p className="max-w-xl text-gray-300 text-lg leading-relaxed">
+          Brad Pitt stars in an adrenaline-fueled racing drama that takes audiences inside the
+          high-speed world of Formula 1. Filmed with groundbreaking in-car cameras and IMAX
+          technology, the movie delivers an authentic, edge-of-your-seat experience as a veteran
+          driver mentors the next generation while battling for glory on the track.
+        </p>
+
+        {/* Button */}
+        <button
+          onClick={() => navigate('/movies')}
+          className="flex items-center gap-2 px-4 py-2 text-sm md:text-base  bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer w-fit"
+        >
+          Explore Movies
+          <ArrowRight className="w-5 h-5" />
+        </button>
       </div>
-
-      {/* Description */}
-      <p className="max-w-lg text-gray-200 text-xl ">
-        Demon Slayer: Infinity Castle is a Japanese anime film from Ufotable that brings together
-        the Demon Slayer Corps for their most dangerous mission yet. Blending breathtaking action,
-        stunning animation, the movie takes viewers on an intense journey through the mysterious
-        Infinity Castle as Tanjiro and his allies face the strongest demons in a fight to protect
-        humanity.
-      </p>
-
-      {/* Button */}
-      <button
-        onClick={() => navigate('/movies')}
-        className="flex items-center gap-2 px-6 py-3 text-sm bg-primary hover:bg-primary-dull 
-        transition rounded-full font-medium cursor-pointer"
-      >
-        Explore Movies
-        <ArrowRight className="w-5 h-5" />
-      </button>
     </div>
   )
 }

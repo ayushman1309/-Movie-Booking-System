@@ -2,6 +2,7 @@ import googlePlay from './googlePlay.svg'
 import appStore from './appStore.svg'
 import screenImage from './screenImage.svg'
 import profile from './profile.png'
+import { Video } from 'lucide-react'
 
 export const assets = {
   googlePlay,
@@ -10,24 +11,34 @@ export const assets = {
   profile
 }
 
+import backgroundImage from './backgroundImage.png'  // Infinity Castle background
+
 export const dummyTrailers = [
     {
-        image: "https://img.youtube.com/vi/WpW36ldAqnM/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=WpW36ldAqnM'
+        title: "F1 – Official Teaser",
+        videoUrl: "https://www.youtube.com/watch?v=VIDEO_ID_1", // replace with real trailer link
+        image: "https://all.web.img.acsta.net/r_2500_x/img/49/78/49787f68c115177a429f394692f791c2.jpg" // use any valid poster or backdrop
     },
     {
-        image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=-sAOWhvheK8'
+        title: "The Running Man (2025) Teaser",
+        videoUrl: "https://www.youtube.com/watch?v=INSERT_RUNNING_MAN_TRAILER_ID",
+        image: "https://m.media-amazon.com/images/M/MV5BMTczMzFjOTUtNGRlZS00MDM3LWExYjEtYWYxZDNmNzI2YTRmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" // use the poster/backdrop image for The Running Man
     },
     {
-        image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=1pHDWnXmK7Y'
+        title: "Fantastic Four: First Steps Trailer",
+        videoUrl: "https://www.youtube.com/watch?v=INSERT_FANTASTIC_FOUR_TRAILER_ID",
+        image: "https://m.media-amazon.com/images/M/MV5BOGM5MzA3MDAtYmEwMi00ZDNiLTg4MDgtMTZjOTc0ZGMyNTIwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
     },
     {
-        image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=umiKiW4En9g'
-    },
+        title: "Sinners (2025) Trailer",
+        videoUrl: "https://www.youtube.com/watch?v=INSERT_SINNERS_TRAILER_ID",
+        image: "https://www.heavenofhorror.com/wp-content/uploads/2024/09/Sinners-2025-horror-movie-1.jpg"
+    }
 ]
+
+
+
+
 
 const dummyCastsData = [
     { "name": "Milla Jovovich", "profile_path": "https://image.tmdb.org/t/p/original/usWnHCzbADijULREZYSJ0qfM00y.jpg", },
@@ -170,26 +181,25 @@ export const dummyShowsData = [
         "vote_count": 19885,
         "runtime": 170,
     },
-    {
-        "_id": "986056",
-        "id": 986056,
-        "title": "Thunderbolts*",
-        "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
-        "poster_path": "https://image.tmdb.org/t/p/original/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg",
-        "backdrop_path": "https://image.tmdb.org/t/p/original/rthMuZfF4fqEU4JVbgSW9wQ8rs.jpg",
-        "genres": [
-            { "id": 28, "name": "Action" },
-            { "id": 878, "name": "Science Fiction" },
-            { "id": 12, "name": "Adventure" }
-        ],
-        "casts": dummyCastsData,
-        "release_date": "2025-04-30",
-        "original_language": "en",
-        "tagline": "Everyone deserves a second shot.",
-        "vote_average": 7.443,
-        "vote_count": 23569,
-        "runtime": 127,
-    }
+    // {
+    //     "_id": "986056",
+    //     "id": 986056,
+    //     "title": "Thunderbolts*",
+    //     "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+    //     "poster_path": "https://static1.moviewebimages.com/wordpress/wp-content/uploads/2024/09/thunderbolts-poster.jpeg",
+    //     "genres": [
+    //         { "id": 28, "name": "Action" },
+    //         { "id": 878, "name": "Science Fiction" },
+    //         { "id": 12, "name": "Adventure" }
+    //     ],
+    //     "casts": dummyCastsData,
+    //     "release_date": "2025-04-30",
+    //     "original_language": "en",
+    //     "tagline": "Everyone deserves a second shot.",
+    //     "vote_average": 7.443,
+    //     "vote_count": 23569,
+    //     "runtime": 127,
+    // }
 ]
 
 export const dummyDateTimeData = {
@@ -318,8 +328,8 @@ export const dummyBookingData = [
         "show": {
             _id: "68352363e96d99513e4221a4",
             movie: dummyShowsData[0],
-            // showDateTime": "2025-06-30" T0 "2:30:00.000",
-            // showPrice": 59,
+            showDateTime: "2025-06-30T02:30:00.000",
+            showPrice: 59,
         },
         "amount": 147,
         "bookedSeats": ["A1", "A2","A3"],
